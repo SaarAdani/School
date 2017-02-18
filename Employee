@@ -1,0 +1,25 @@
+package com.School;
+
+
+public class Employee extends Person {
+
+    private String phone;
+
+    public Employee() {
+
+    }
+
+    public Employee(String name, String address, String phone) {
+        super(name,address);
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+", Phone:"+getPhone()+"]";
+    }
+}
