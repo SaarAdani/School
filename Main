@@ -1,0 +1,59 @@
+package com.School;
+
+import java.util.ArrayList;
+
+public class Main {
+
+    public static ArrayList<Person> person = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        person.add(new Student("Saar","Ramat Gan","Java"));
+        person.add(new Student("Alla","Jerusalem","Secretary"));
+        person.add(new Student("Moshe","Ashdod","Computer Code"));
+        person.add(new Student("Einav","Ashkelon","Swift"));
+        person.add(new Student("Amit","Tel Aviv","Marketing"));
+        person.add(new Teacher("Mayaan","Ramat HaSharon","054-1111111"));
+        person.add(new Teacher("Ofer","Kfar Saba","054-2222222"));
+        person.add(new Teacher("Shelly","Haifa","054-3333333"));
+        person.add(new Teacher("Barak","TelMond","054-4444444"));
+        person.add(new Teacher("Gal","Be'er Sheva","054-5555555"));
+        person.add(new Nurse("Netta","Lod","054-6666666"));
+        person.add(new Nurse("Anna","Rosh Ha'Ein","054-7777777"));
+        person.add(new Nurse("Alexandra","Nesher","054-8888888"));
+        person.add(new Nurse("Michelle","Givataim","054-9999999"));
+        person.add(new Nurse("Monica","Petah Tikva","054-1212121"));
+
+        getAllDetailes();
+        numOfTeachers();
+        staffMeeting();
+    }
+
+    public static void getAllDetailes() {
+
+        for (int i = 0; i < person.size(); i ++) {
+            System.out.println(person.get(i).toString());
+        }
+
+    }
+
+    public static void numOfTeachers() {
+
+        int counter = 0;
+        for (int i = 0; i < person.size(); i++) {
+            if (person.get(i) instanceof Teacher) {
+                counter++;
+            }
+        }
+        System.out.println("The Current Number Of Teachers Is:"+counter);
+    }
+
+    public static void staffMeeting() {
+
+        for (int i = 0; i < person.size(); i++) {
+            if (person.get(i) instanceof Teacher || person.get(i) instanceof Nurse) {
+                System.out.println(person.get(i).getName()+" You Are Courtly Invited To A Staff Meeting Tommorow At 8 AM.");
+            }
+        }
+    }
+}
